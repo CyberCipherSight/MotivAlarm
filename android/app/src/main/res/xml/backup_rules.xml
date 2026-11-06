@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Auto Backup (API < 31). All user data (alarms, timetable, session
+     presets, history, settings) lives in Flutter's SharedPreferences file,
+     so that is the only thing worth backing up. The native firing cache
+     (motivalarm_native) lives in device-protected storage, which Auto
+     Backup never touches — restoring it would only produce stale alarms
+     with no registered PendingIntents; the app re-registers alarms from
+     the restored Flutter data on first launch instead. -->
+<full-backup-content>
+    <include domain="sharedpref" path="FlutterSharedPreferences.xml" />
+</full-backup-content>
